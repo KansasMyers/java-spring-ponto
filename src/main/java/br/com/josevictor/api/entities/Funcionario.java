@@ -23,9 +23,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import br.com.josevictor.api.enums.PerfilEnum;
-import lombok.Data;
 
-@Data
 @Entity
 @Table(name = "funcionario")
 public class Funcionario implements Serializable {
@@ -100,4 +98,108 @@ public class Funcionario implements Serializable {
 		this.dataAtualizacao = atual;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public BigDecimal getValorHora() {
+		return valorHora;
+	}
+
+	public void setValorHora(BigDecimal valorHora) {
+		this.valorHora = valorHora;
+	}
+
+	public Float getQtdHorasTrabalhoDia() {
+		return qtdHorasTrabalhoDia;
+	}
+
+	public void setQtdHorasTrabalhoDia(Float qtdHorasTrabalhoDia) {
+		this.qtdHorasTrabalhoDia = qtdHorasTrabalhoDia;
+	}
+
+	public Float getQtdHorasAlmoco() {
+		return qtdHorasAlmoco;
+	}
+
+	public void setQtdHorasAlmoco(Float qtdHorasAlmoco) {
+		this.qtdHorasAlmoco = qtdHorasAlmoco;
+	}
+
+	public PerfilEnum getPerfil() {
+		return perfil;
+	}
+
+	public void setPerfil(PerfilEnum perfil) {
+		this.perfil = perfil;
+	}
+
+	public Date getDataCriacao() {
+		return dataCriacao;
+	}
+
+	public void setDataCriacao(Date dataCriacao) {
+		this.dataCriacao = dataCriacao;
+	}
+
+	public Date getDataAtualizacao() {
+		return dataAtualizacao;
+	}
+
+	public void setDataAtualizacao(Date dataAtualizacao) {
+		this.dataAtualizacao = dataAtualizacao;
+	}
+
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
+	}
+
+	public List<Lancamento> getLancamentos() {
+		return lancamentos;
+	}
+
+	public void setLancamentos(List<Lancamento> lancamentos) {
+		this.lancamentos = lancamentos;
+	}
+	
 }
