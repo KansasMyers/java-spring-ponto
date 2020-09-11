@@ -1,25 +1,22 @@
 package br.com.josevictor.api.repositories;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.security.NoSuchAlgorithmException;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import br.com.josevictor.api.entities.Empresa;
 import br.com.josevictor.api.entities.Funcionario;
 import br.com.josevictor.api.enums.PerfilEnum;
 import br.com.josevictor.api.utils.PasswordUtils;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 @ActiveProfiles("test")
 public class FuncionarioRepositoryTest {
@@ -33,13 +30,13 @@ public class FuncionarioRepositoryTest {
 	private static final String EMAIL = "email@email.com";
 	private static final String CPF = "24291173474";
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 		Empresa empresa = this.empresaRepository.save(obterDadosEmpresa());
 		this.funcionarioRepository.save(obterDadosFuncionario(empresa));
 	}
 
-	@After
+	@AfterEach
 	public final void tearDown() {
 		this.empresaRepository.deleteAll();
 	}

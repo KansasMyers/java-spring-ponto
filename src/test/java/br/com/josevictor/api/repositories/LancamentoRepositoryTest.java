@@ -1,21 +1,19 @@
 package br.com.josevictor.api.repositories;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.List;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import br.com.josevictor.api.entities.Empresa;
 import br.com.josevictor.api.entities.Funcionario;
@@ -24,7 +22,6 @@ import br.com.josevictor.api.enums.PerfilEnum;
 import br.com.josevictor.api.enums.TipoEnum;
 import br.com.josevictor.api.utils.PasswordUtils;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 @ActiveProfiles("test")
 public class LancamentoRepositoryTest {
@@ -40,7 +37,7 @@ public class LancamentoRepositoryTest {
 
 	private Long funcionarioId;
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 		Empresa empresa = this.empresaRepository.save(obterDadosEmpresa());
 
@@ -51,7 +48,7 @@ public class LancamentoRepositoryTest {
 		this.lancamentoRepository.save(obterDadosLancamentos(funcionario));
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() throws Exception {
 		this.empresaRepository.deleteAll();
 	}
